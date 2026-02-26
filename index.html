@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Live Training: Land a $70k+ Dev Job in 4-6 Months | Learn Frontend Now</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --dark:         #08080f;
+      --dark-mid:     #0f0f1c;
+      --dark-light:   #191928;
+      --dark-card:    #111120;
+      --blue:         #0ea5e9;
+      --blue-bright:  #38bdf8;
+      --blue-dim:     #0369a1;
+      --cyan:         #22d3ee;
+      --green:        #4ade80;
+      --white:        #ffffff;
+      --text-muted:   rgba(255,255,255,0.5);
+      --text-dim:     rgba(255,255,255,0.3);
+      --border:       rgba(255,255,255,0.07);
+      --border-blue:  rgba(14,165,233,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    /* ── TOPBAR ─────────────────────────────────────── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--blue-dim);
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .topbar p {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.92);
+      letter-spacing: 0.01em;
+    }
+
+    .topbar p strong { color: #fff; font-weight: 700; }
+
+    .topbar-cta {
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #fff;
+      color: var(--blue-dim);
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .topbar-cta:hover { opacity: 0.85; }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      background: var(--dark);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--cyan) 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .nav-logo-text {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-logo-text span { color: var(--blue-bright); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.highlight { color: var(--blue-bright); font-weight: 600; }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: var(--dark);
+      overflow: hidden;
+      padding: 5rem 2rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 60% 0%, rgba(14,165,233,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 80%, rgba(34,211,238,0.05) 0%, transparent 50%);
+      z-index: 0;
+    }
+
+    /* dot grid */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
+      background-size: 28px 28px;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      border: 1px solid var(--border-blue);
+      background: rgba(14,165,233,0.07);
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--blue-bright);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.75); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue-bright);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .event-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+    }
+
+    .badge svg { color: var(--blue-bright); flex-shrink: 0; }
+
+    .btn-register {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--blue);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      transition: background 0.15s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-register:hover { background: var(--blue-bright); transform: translateY(-1px); }
+
+    .hero-seats {
+      font-size: 0.73rem;
+      color: var(--text-dim);
+      margin-top: 0.75rem;
+    }
+
+    /* student proof strip */
+    .proof-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      padding: 0.85rem 1.1rem;
+      background: rgba(74,222,128,0.06);
+      border: 1px solid rgba(74,222,128,0.15);
+      border-radius: 10px;
+      max-width: 480px;
+    }
+
+    .proof-avatars {
+      display: flex;
+    }
+
+    .proof-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--dark-light);
+      border: 2px solid var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--blue-bright);
+      margin-left: -8px;
+      flex-shrink: 0;
+    }
+
+    .proof-avatars .proof-avatar:first-child { margin-left: 0; }
+
+    .proof-text {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.4;
+    }
+
+    .proof-text strong { color: var(--green); }
+
+    /* ── REGISTRATION CARD ───────────────────────────── */
+    .reg-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 0 0 1px rgba(14,165,233,0.08), 0 24px 60px rgba(0,0,0,0.5);
+    }
+
+    .reg-card-top {
+      background: linear-gradient(135deg, var(--blue-dim) 0%, #0c4a6e 100%);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .reg-card-top p {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.2rem;
+    }
+
+    .reg-card-top h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .reg-card > p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-group label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 0.65rem 0.85rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 7px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: #fff;
+      background: rgba(255,255,255,0.05);
+      transition: border-color 0.15s;
+      outline: none;
+      width: 100%;
+    }
+
+    .form-group input::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group select option { background: #1a1a28; color: #fff; }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(14,165,233,0.12);
+    }
+
+    .form-full { grid-column: 1 / -1; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.95rem;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-family: inherit;
+      transition: background 0.15s;
+      letter-spacing: -0.01em;
+    }
+    .btn-submit:hover { background: var(--blue-bright); }
+
+    .form-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+      font-size: 0.68rem;
+      color: var(--text-dim);
+    }
+
+    /* ── SECTION BASE ────────────────────────────────── */
+    .section { padding: 5rem 2rem; }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ── STATS BAR ───────────────────────────────────── */
+    .stats-bar {
+      background: var(--dark-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.75rem 2rem;
+    }
+
+    .stats-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0 2.5rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--blue-bright);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      max-width: 110px;
+    }
+
+    /* ── SECRETS / LEARN CARDS ───────────────────────── */
+    .secrets-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .secret-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .secret-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .secret-card:hover {
+      border-color: var(--border-blue);
+      box-shadow: 0 8px 30px rgba(14,165,233,0.1);
+    }
+
+    .secret-card:hover::before { opacity: 1; }
+
+    .secret-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--blue-bright);
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    .secret-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(14,165,233,0.1);
+      border: 1px solid var(--border-blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--blue-bright);
+    }
+
+    .secret-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .secret-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .secret-result {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(74,222,128,0.08);
+      border: 1px solid rgba(74,222,128,0.15);
+      padding: 0.3rem 0.65rem;
+      border-radius: 100px;
+      margin-top: 1rem;
+    }
+
+    /* ── ROADMAP ─────────────────────────────────────── */
+    .roadmap-section {
+      background: var(--dark-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+
+    .roadmap-item {
+      background: var(--dark-card);
+      padding: 1.75rem;
+    }
+
+    .roadmap-month {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--blue-bright);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .roadmap-item h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .roadmap-item p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .roadmap-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--blue-bright);
+      background: rgba(14,165,233,0.08);
+      border: 1px solid var(--border-blue);
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      margin-top: 0.75rem;
+    }
+
+    /* ── HOST ────────────────────────────────────────── */
+    .host-section {
+      background: var(--dark);
+    }
+
+    .host-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .host-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .host-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: var(--dark-light);
+      border: 3px solid var(--border-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--blue-bright);
+      margin: 0 auto;
+      box-shadow: 0 0 40px rgba(14,165,233,0.12);
+    }
+
+    .host-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      background: rgba(14,165,233,0.08);
+      border: 1px solid var(--border-blue);
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+
+    .host-card h4 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    .host-title {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .host-stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .host-stat {
+      text-align: left;
+    }
+
+    .host-stat-num {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--blue-bright);
+      letter-spacing: -0.03em;
+    }
+
+    .host-stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .host-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── TESTIMONIALS ────────────────────────────────── */
+    .testi-section { background: var(--dark-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .testi-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 0.15rem;
+      margin-bottom: 1rem;
+    }
+
+    .star { color: #f59e0b; font-size: 0.85rem; }
+
+    .testi-result {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(74,222,128,0.08);
+      border: 1px solid rgba(74,222,128,0.15);
+      padding: 0.25rem 0.6rem;
+      border-radius: 100px;
+      margin-bottom: 0.85rem;
+    }
+
+    .testi-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .testi-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--dark-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--blue-bright);
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .testi-meta {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* ── FOR YOU ─────────────────────────────────────── */
+    .for-you-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .for-you-col {
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .for-you-col.yes {
+      background: rgba(14,165,233,0.04);
+      border: 1px solid var(--border-blue);
+    }
+
+    .for-you-col.no {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+    }
+
+    .for-you-col h4 {
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .for-you-col.yes h4 { color: var(--blue-bright); }
+    .for-you-col.no h4  { color: var(--text-muted); }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .check-list li {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      line-height: 1.5;
+    }
+
+    .check-list li .icon { flex-shrink: 0; margin-top: 0.1rem; }
+
+    /* ── FAQ ─────────────────────────────────────────── */
+    .faq-section { background: var(--dark-mid); border-top: 1px solid var(--border); }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .faq-item h5 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+
+    .faq-item h5 span {
+      color: var(--blue-bright);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .faq-item p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      padding-left: 1.3rem;
+    }
+
+    /* ── FINAL CTA ───────────────────────────────────── */
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(14,165,233,0.15) 0%, transparent 60%);
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.75rem, 3vw, 2.6rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .final-cta h2 em { font-style: normal; color: var(--blue-bright); }
+
+    .final-cta p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: var(--dark-mid);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy { font-size: 0.72rem; color: var(--text-dim); }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--text-muted); }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .reg-card { max-width: 520px; }
+      .secrets-grid { grid-template-columns: 1fr 1fr; }
+      .roadmap-grid { grid-template-columns: 1fr 1fr; }
+      .host-card { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
+      .host-stats { justify-content: center; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .for-you-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .stat-item { padding: 0.75rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      .stats-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 0.75rem 1.25rem; }
+      .nav-links { display: none; }
+      .hero { padding: 3rem 1.25rem; }
+      .section { padding: 3.5rem 1.25rem; }
+      .secrets-grid { grid-template-columns: 1fr; }
+      .roadmap-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .host-card { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ TOPBAR ════════════════════════════════════════ -->
+  <div class="topbar">
+    <p>🚨 Free Training — <strong>Only 20 spots available.</strong> Registration closes once we hit capacity.</p>
+    <a href="#register" class="topbar-cta">Claim My Spot →</a>
+  </div>
+
+  <!-- ══ NAV ══════════════════════════════════════════ -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">&lt;/&gt;</div>
+      <span class="nav-logo-text">Learn<span>Frontend</span>Now</span>
+    </a>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Results</a>
+      <a href="#">Program</a>
+      <a href="#register" class="highlight">Join the Training</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <!-- Left -->
+      <div>
+        <div class="hero-label">Free Live Training</div>
+        <h1>
+          Land a <em>$70k+ Remote</em><br>
+          Developer Job in<br>
+          4–6 Months Flat
+        </h1>
+        <p class="hero-sub">
+          No degree. No experience. No bootcamp debt. Join Harry for a free 60-minute training where he reveals the exact roadmap 70+ students used to break into tech — and how you can do it even faster with AI.
+        </p>
+
+        <div class="event-badges">
+          <div class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Wednesday, March 26, 2025
+          </div>
+          <div class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            60 Minutes
+          </div>
+          <div class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            100% Free
+          </div>
+          <div class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Live Q&amp;A
+          </div>
+        </div>
+
+        <a href="#register" class="btn-register">
+          Reserve My Free Spot
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="hero-seats">Only 20 seats. 14 already taken.</p>
+
+        <div class="proof-strip">
+          <div class="proof-avatars">
+            <div class="proof-avatar">SL</div>
+            <div class="proof-avatar">MS</div>
+            <div class="proof-avatar">JR</div>
+            <div class="proof-avatar">+</div>
+          </div>
+          <p class="proof-text">
+            <strong>70+ students already placed</strong> — Sebastien landed $95k in 4 months, Marshall hit $100k in 2.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right — Registration Card -->
+      <div class="reg-card" id="register">
+        <div class="reg-card-top">
+          <p>Free Live Training</p>
+          <h3>How to Land a $70k+ Remote Dev Job in 4–6 Months</h3>
+        </div>
+        <p>Enter your details and we'll send you the link + a free pre-training resource before we go live.</p>
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Alex">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Chen">
+            </div>
+            <div class="form-group form-full">
+              <label>Email Address</label>
+              <input type="email" placeholder="alex@email.com">
+            </div>
+            <div class="form-group form-full">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+1 (555) 000-0000">
+            </div>
+            <div class="form-group form-full">
+              <label>Current Situation</label>
+              <select>
+                <option value="" disabled selected>Where are you starting from?</option>
+                <option>Complete beginner — no coding experience</option>
+                <option>Some self-taught basics (HTML/CSS)</option>
+                <option>Tried a bootcamp or course before</option>
+                <option>Working in tech but want to level up</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-submit" type="submit">Save My Free Seat →</button>
+          <div class="form-trust">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            No spam. Unsubscribe anytime. 100% free.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ STATS BAR ══════════════════════════════════════ -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div>
+          <div class="stat-num">70+</div>
+          <div class="stat-label">Students placed in dev roles</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div>
+          <div class="stat-num">$70k+</div>
+          <div class="stat-label">Guaranteed starting salary</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div>
+          <div class="stat-num">4–6</div>
+          <div class="stat-label">Months to job-ready, start to finish</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div>
+          <div class="stat-num">$0</div>
+          <div class="stat-label">Degree or prior experience required</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ THE 3 SECRETS ══════════════════════════════════ -->
+  <section class="section" style="background: var(--dark);">
+    <div class="section-inner">
+      <div class="section-label">What You'll Learn</div>
+      <h2 class="section-title">The 3 secrets to getting hired<br>in 2025 — revealed live.</h2>
+      <p class="section-sub">Everything you'll learn in 60 minutes that most bootcamps charge $15k to teach — and still get wrong.</p>
+
+      <div class="secrets-grid">
+
+        <div class="secret-card">
+          <div class="secret-num">// SECRET 01</div>
+          <div class="secret-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4>Earn While You Learn</h4>
+          <p>By month 2, you'll be building WordPress sites for small businesses and charging $300–$1,000 per project. Real experience. Real income. The course starts paying for itself before you're even halfway through.</p>
+          <div class="secret-result">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            Builds real-world portfolio
+          </div>
+        </div>
+
+        <div class="secret-card">
+          <div class="secret-num">// SECRET 02</div>
+          <div class="secret-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h4>The AI Internship</h4>
+          <p>Graduate with a 1-year AI work experience certificate — the single biggest differentiator in a competitive junior dev market. You'll build real AI-related projects that become your portfolio and your interview talking points.</p>
+          <div class="secret-result">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            1-year work experience cert
+          </div>
+        </div>
+
+        <div class="secret-card">
+          <div class="secret-num">// SECRET 03</div>
+          <div class="secret-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>The $70k Job Guarantee</h4>
+          <p>Follow the program and we guarantee you a $70k+ remote role. If you complete every step and don't land the job, we refund your full tuition and pay you $1,000 for your time. The risk is entirely on us.</p>
+          <div class="secret-result">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            Full refund + $1k if we miss
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ THE ROADMAP ════════════════════════════════════ -->
+  <section class="section roadmap-section">
+    <div class="section-inner">
+      <div class="section-label">The Roadmap</div>
+      <h2 class="section-title">Zero to hired. Month by month.</h2>
+      <p class="section-sub">No fluff, no filler. Every month has a clear deliverable so you always know exactly what you're working toward.</p>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-item">
+          <div class="roadmap-month">Month 01</div>
+          <h4>HTML &amp; CSS Foundations</h4>
+          <p>Build your first websites from scratch. Learn the fundamentals that every frontend developer uses every single day.</p>
+          <div class="roadmap-tag">Foundation</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-month">Month 02</div>
+          <h4>Earn While You Learn</h4>
+          <p>Start building WordPress sites for local businesses. Your first client. Your first invoice. Your first real-world experience.</p>
+          <div class="roadmap-tag">Income</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-month">Month 03</div>
+          <h4>JavaScript + React</h4>
+          <p>Level up to the language every employer wants. Build dynamic, interactive applications and add React to your stack.</p>
+          <div class="roadmap-tag">Core Skills</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-month">Month 04</div>
+          <h4>AI Internship + Portfolio</h4>
+          <p>Build 3–5 AI-powered projects. Complete your internship placement and earn the 1-year work experience certificate.</p>
+          <div class="roadmap-tag">Differentiation</div>
+        </div>
+        <div class="roadmap-item">
+          <div class="roadmap-month">Month 05–06</div>
+          <h4>Interview Prep + Placement</h4>
+          <p>Mock interviews, resume review, salary negotiation coaching. We work alongside you until you sign your offer letter.</p>
+          <div class="roadmap-tag">Job Placement</div>
+        </div>
+        <div class="roadmap-item" style="background: rgba(14,165,233,0.05); border-left: 2px solid var(--blue);">
+          <div class="roadmap-month" style="color: var(--green);">The Outcome</div>
+          <h4 style="color: var(--green);">$70k+ Remote Dev Role</h4>
+          <p>A full-time remote developer job at $70k+. With real experience, a real portfolio, and a team behind you every step of the way.</p>
+          <div class="roadmap-tag" style="color: var(--green); background: rgba(74,222,128,0.08); border-color: rgba(74,222,128,0.2);">Guaranteed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MEET YOUR HOST ════════════════════════════════ -->
+  <section class="section host-section">
+    <div class="host-inner">
+      <div class="section-label" style="text-align: center;">Your Host</div>
+      <h2 class="section-title" style="text-align: center;">Taught by someone who's done it.</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align: center;">Not a theory guy. Harry figured out the system the hard way — then built Learn Frontend Now so you don't have to.</p>
+
+      <div class="host-card">
+        <div>
+          <div class="host-photo" style="background: none; overflow: hidden; padding: 0;">
+          <img src="harryashton_profile.webp" alt="Harry Ashton" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        </div>
+        <div>
+          <div class="host-tag">Founder</div>
+          <h4>Harry</h4>
+          <p class="host-title">Founder, Learn Frontend Now</p>
+          <div class="host-stats">
+            <div class="host-stat">
+              <div class="host-stat-num">$540k</div>
+              <div class="host-stat-label">annual business revenue</div>
+            </div>
+            <div class="host-stat">
+              <div class="host-stat-num">16.9K</div>
+              <div class="host-stat-label">Instagram followers</div>
+            </div>
+            <div class="host-stat">
+              <div class="host-stat-num">4.5K</div>
+              <div class="host-stat-label">YouTube subscribers</div>
+            </div>
+            <div class="host-stat">
+              <div class="host-stat-num">70+</div>
+              <div class="host-stat-label">students placed</div>
+            </div>
+          </div>
+          <p>Harry started exactly where you are — a beginner with no degree, struggling to break into tech. After discovering the "Earn While You Learn" model and the power of AI work experience, everything changed. He built Learn Frontend Now to give every ambitious career changer the structured roadmap, real-world experience, and guaranteed job placement that the traditional bootcamp industry never delivers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STUDENT RESULTS ════════════════════════════════ -->
+  <section class="section testi-section">
+    <div class="section-inner">
+      <div class="section-label">Student Results</div>
+      <h2 class="section-title">From zero to hired. For real.</h2>
+
+      <div class="testimonials-grid">
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="testi-result">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            $95k role — 4 months
+          </div>
+          <p>"I went from knowing nothing about code to signing a $95k offer in four months. The Earn While You Learn module paid for the program before I even graduated. Harry's roadmap is the real deal."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SL</div>
+            <div>
+              <div class="testi-name">Sebastien L.</div>
+              <div class="testi-meta">Frontend Developer, Remote</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="testi-result">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            $100k role — 2 months
+          </div>
+          <p>"Two months. That's how long it took. The AI internship certificate was the thing that made every interviewer stop and ask questions. I never had to explain a gap in my resume because it was filled."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MS</div>
+            <div>
+              <div class="testi-name">Marshall S.</div>
+              <div class="testi-meta">React Developer, Remote</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="testi-result">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            $78k role — 5 months
+          </div>
+          <p>"I was working a $14/hr warehouse job. I attended the free webinar, joined the program, and five months later I'm a full-time remote developer making $78k. The free training alone changed how I saw what was possible."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JR</div>
+            <div>
+              <div class="testi-name">Jamie R.</div>
+              <div class="testi-meta">Junior Dev → Mid-Level, Remote</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHO THIS IS FOR ════════════════════════════════ -->
+  <section class="section" style="background: var(--dark);">
+    <div class="section-inner">
+      <div class="section-label">Is This For You</div>
+      <h2 class="section-title">This training was built for you if...</h2>
+
+      <div class="for-you-grid">
+
+        <div class="for-you-col yes">
+          <h4>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            You'll get a ton from this
+          </h4>
+          <ul class="check-list">
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              You're a complete beginner or career changer ready to get serious about tech
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              You want a remote job with real income — not just "learning to code" for its own sake
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              You've tried bootcamps or YouTube and feel stuck without a clear path forward
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              You can commit 10–15 hours per week and want a structured, guided system
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              You want to leverage AI as a skill advantage — not fear it as a threat
+            </li>
+          </ul>
+        </div>
+
+        <div class="for-you-col no">
+          <h4>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            Probably not for you if...
+          </h4>
+          <ul class="check-list">
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              You're not willing to put in 10–15 hours per week consistently
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              You want a passive shortcut with zero effort on your part
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              You're already a senior developer with 3+ years of experience
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ════════════════════════════════════════════ -->
+  <section class="section faq-section">
+    <div class="section-inner">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Questions we get every time.</h2>
+
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <h5><span>Q:</span> What if I have zero experience or tech background?</h5>
+          <p>Perfect — this is exactly who the program is designed for. You don't need a degree, prior experience, or even a strong math background. You just need to show up consistently.</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> Won't AI just take developer jobs anyway?</h5>
+          <p>Developers who use AI are replacing developers who don't. The AI Internship module teaches you to build with AI as a tool — making you faster, more valuable, and harder to replace than a junior with no AI experience.</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> Can I do this while working a full-time job?</h5>
+          <p>Yes. The program is built for 10–15 hours per week. Most students go through it while working full-time — the structured roadmap makes it easier to stay on track even with a busy schedule.</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> What if I follow the program and still don't get a job?</h5>
+          <p>We refund your full tuition and pay you $1,000 for your time. That's the guarantee. We only win when you win — so our entire team is invested in your outcome from day one.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FINAL CTA ══════════════════════════════════════ -->
+  <section class="section final-cta">
+    <div class="final-cta-inner">
+      <div class="section-label" style="text-align: center; margin-bottom: 1rem;">One More Thing</div>
+      <h2>Your <em>$70k+ remote job</em> is<br>4–6 months away.</h2>
+      <p>The only thing standing between you and a remote developer career is a clear roadmap and the right system. Join Harry for 60 minutes — and leave knowing exactly what to do next.</p>
+
+      <div class="event-badges" style="justify-content: center; margin-bottom: 2rem;">
+        <div class="badge">Wednesday, March 26, 2025</div>
+        <div class="badge">60 Minutes</div>
+        <div class="badge">Free to Attend</div>
+        <div class="badge">Only 20 Seats</div>
+      </div>
+
+      <a href="#register" class="btn-register" style="font-size: 1.05rem; padding: 1.1rem 2.5rem;">
+        Save My Seat Now
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p style="color: var(--text-dim); font-size: 0.73rem; margin-top: 1rem;">Free to attend. No credit card. No commitment.</p>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="nav-logo" style="text-decoration: none;">
+        <div class="nav-logo-icon">&lt;/&gt;</div>
+        <span class="nav-logo-text">Learn<span>Frontend</span>Now</span>
+      </div>
+      <span class="footer-copy">© 2025 Learn Frontend Now. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
