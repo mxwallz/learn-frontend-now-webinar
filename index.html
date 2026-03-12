@@ -470,21 +470,23 @@
     .stats-inner {
       max-width: 1120px;
       margin: 0 auto;
-      display: flex;
+      display: grid;
+      grid-template-columns: auto auto 1fr;
       align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
     }
 
     .stat-item {
       display: flex;
       align-items: center;
       gap: 0.85rem;
-      padding: 0 2.5rem;
+      padding: 0.75rem 2.5rem;
       border-right: 1px solid var(--border);
     }
 
-    .stat-item:last-child { border-right: none; }
+    .stat-item:last-child {
+      border-right: none;
+      padding-left: 2.5rem;
+    }
 
     .stat-num {
       font-size: 1.6rem;
@@ -499,7 +501,8 @@
       font-size: 0.75rem;
       color: var(--text-muted);
       line-height: 1.4;
-      max-width: 110px;
+      max-width: 160px;
+      white-space: nowrap;
     }
 
     /* ── SECRETS / LEARN CARDS ───────────────────────── */
@@ -1027,15 +1030,14 @@
 
   <!-- ══ TOPBAR ════════════════════════════════════════ -->
   <div class="topbar">
-    <p>🚨 Free Training, <strong>only 20 spots available.</strong> Registration closes once we hit capacity.</p>
+    <p>🚨 <strong>Registration closes once we hit capacity.</strong> Secure your spot now.</p>
     <a href="#register" class="topbar-cta">Claim My Spot →</a>
   </div>
 
   <!-- ══ NAV ══════════════════════════════════════════ -->
   <nav>
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">&lt;/&gt;</div>
-      <span class="nav-logo-text">Learn<span>Frontend</span>Now</span>
+      <img src="fnlogo_white.png" alt="Frontend Now" style="height:38px;width:auto;">
     </a>
     <div class="nav-links">
       <a href="#register" class="highlight">Save My Seat</a>
@@ -1048,7 +1050,7 @@
 
       <!-- Left -->
       <div>
-        <div class="hero-label">Free Live Training — Frontend Now</div>
+        <div class="hero-label">Live Masterclass — Frontend Now</div>
         <h1>
           Interested in <em>cyber security?</em>
         </h1>
@@ -1081,7 +1083,7 @@
           </div>
           <div class="badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            100% Free
+            Live Teaching
           </div>
           <div class="badge">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
@@ -1093,7 +1095,7 @@
           Save My Spot
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <p class="hero-seats">Free. 60 minutes. Saturday [DATE] at 3pm EST / 8pm UK.</p>
+        <p class="hero-seats">60 minutes. Saturday [DATE] at 3pm EST / 8pm UK.</p>
 
         <div class="proof-strip">
           <div class="proof-avatars">
@@ -1111,7 +1113,7 @@
       <!-- Right — Registration Card -->
       <div class="reg-card" id="register">
         <div class="reg-card-top">
-          <p>Free Live Training</p>
+          <p>Live Masterclass</p>
           <h3>How to land a $75k–$100k+ frontend developer role in 2026</h3>
         </div>
         <p>Enter your details and we'll send you the link + a free pre-training resource before we go live.</p>
@@ -1144,10 +1146,10 @@
               </select>
             </div>
           </div>
-          <button class="btn-submit" type="submit">Save My Free Seat →</button>
+          <button class="btn-submit" type="submit">Save My Spot →</button>
           <div class="form-trust">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            No spam. Unsubscribe anytime. 100% free.
+            No spam. Unsubscribe anytime.
           </div>
         </form>
       </div>
@@ -1166,14 +1168,34 @@
       </div>
       <div class="stat-item">
         <div>
-          <div class="stat-num">4.8/5</div>
-          <div class="stat-label">On Trustpilot — 95 reviews</div>
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.2rem;">
+            <div class="stat-num" style="font-size:1.6rem;">4.8</div>
+            <div>
+              <!-- Trustpilot stars -->
+              <div style="display:flex;gap:2px;margin-bottom:3px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div style="font-size:0.68rem;color:var(--text-muted);display:flex;align-items:center;gap:4px;">
+                <span style="font-weight:700;color:#00b67a;">Trustpilot</span>
+                <span>· 95 reviews</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="stat-item">
-        <div>
-          <div class="stat-num" style="font-size:0.9rem; letter-spacing:-0.02em;">Speechify · Vercel · FanDuel · JPMorgan</div>
-          <div class="stat-label">Companies that hired our students</div>
+      <div class="stat-item" style="border-right:none;">
+        <div style="display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;">
+          <span style="font-size:0.72rem;font-weight:600;color:var(--text-muted);white-space:nowrap;margin-right:0.25rem;">Students hired at</span>
+          <span style="font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.25rem 0.65rem;border-radius:6px;">Speechify</span>
+          <span style="font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.25rem 0.65rem;border-radius:6px;">Vercel</span>
+          <span style="font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.25rem 0.65rem;border-radius:6px;">FanDuel</span>
+          <span style="font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.25rem 0.65rem;border-radius:6px;">JPMorgan Chase</span>
+          <span style="font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.25rem 0.65rem;border-radius:6px;">Netflix</span>
+          <span style="font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:0.25rem 0.65rem;border-radius:6px;">Meta</span>
         </div>
       </div>
     </div>
@@ -1184,7 +1206,7 @@
     <div class="section-inner">
       <!-- Portfolio section -->
       <div class="section-label">Portfolio</div>
-      <h2 class="section-title">This is the difference between getting ignored and getting hired.</h2>
+      <h2 class="section-title">Discover why this portfolio is actually getting interviews right now.</h2>
 
       <div style="background: var(--dark-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin: 2rem 0; display: flex; align-items: center; justify-content: center; min-height: 220px; color: var(--text-muted); font-size: 0.85rem; text-align: center;">
         [INSERT: Evan's portfolio thumbnail]
@@ -1219,42 +1241,164 @@
           <span style="font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.6;">The system that has placed 70+ developers into $75k–$100k+ roles without CS degrees, bootcamp certificates, or years of experience</span>
         </div>
       </div>
+
+      <!-- Cyber security vs frontend comparison table -->
+      <div style="margin-top:3rem;max-width:800px;margin-left:auto;margin-right:auto;">
+        <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:0.75rem;text-align:center;">According to AI — USA Learning Curve Comparison</p>
+        <div style="overflow-x:auto;border-radius:12px;border:1px solid var(--border);">
+          <table style="width:100%;border-collapse:collapse;font-size:0.84rem;">
+            <thead>
+              <tr style="background:var(--dark-card);">
+                <th style="padding:0.85rem 1.1rem;text-align:left;color:rgba(255,255,255,0.4);font-weight:600;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid var(--border);">Feature</th>
+                <th style="padding:0.85rem 1.1rem;text-align:left;color:#38bdf8;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid var(--border);">Front-End Development</th>
+                <th style="padding:0.85rem 1.1rem;text-align:left;color:rgba(255,255,255,0.5);font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid var(--border);">Cybersecurity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:var(--dark-mid);">
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;">Primary Focus</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid var(--border);">Creating user interfaces and visual experiences.</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);border-bottom:1px solid var(--border);">Protecting data, networks, and systems from threats.</td>
+              </tr>
+              <tr style="background:var(--dark-card);">
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;">Learning Curve</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid var(--border);"><span style="color:#4ade80;font-weight:600;">Moderate.</span> You can build visible projects quickly.</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);border-bottom:1px solid var(--border);"><span style="color:#f87171;font-weight:600;">Steep.</span> Requires a broad grasp of IT infrastructure and security frameworks.</td>
+              </tr>
+              <tr style="background:var(--dark-mid);">
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;">Feedback Loop</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid var(--border);"><span style="color:#4ade80;font-weight:600;">Immediate.</span> Changes appear instantly in the browser.</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);border-bottom:1px solid var(--border);"><span style="color:#f87171;font-weight:600;">Delayed.</span> Success is measured by what <em>doesn't</em> happen.</td>
+              </tr>
+              <tr style="background:var(--dark-card);">
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;">Entry Requirements</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid var(--border);">Portfolio-driven; degrees are often less critical than proof of skill.</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);border-bottom:1px solid var(--border);">Certification-heavy (CompTIA Security+); often requires IT experience.</td>
+              </tr>
+              <tr style="background:var(--dark-mid);">
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;">Key Skills</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.8);border-bottom:1px solid var(--border);">HTML, CSS, JavaScript, and creative problem-solving.</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);border-bottom:1px solid var(--border);">Networking, OS internals, ethical hacking, risk management.</td>
+              </tr>
+              <tr style="background:var(--dark-card);">
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);font-weight:600;white-space:nowrap;">Time to Income</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.8);"><span style="color:#4ade80;font-weight:600;">Faster.</span> Freelancing or junior roles within 4–6 months.</td>
+                <td style="padding:0.8rem 1.1rem;color:rgba(255,255,255,0.5);"><span style="color:#f87171;font-weight:600;">Slower.</span> Usually 2+ years of IT experience to reach good pay.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
 
   <!-- ══ MEET YOUR HOST ════════════════════════════════ -->
   <section class="section host-section">
-    <div class="host-inner">
-      <div class="section-label" style="text-align: center;">Your Host</div>
-      <h2 class="section-title" style="text-align: center;">Taught by someone who's done it.</h2>
-      <p class="section-sub" style="margin: 0 auto; text-align: center;">No degree. 100+ rejections. Then he cracked the system.</p>
+    <div class="section-inner">
+      <div class="section-label">Your Host</div>
+      <h2 class="section-title">Meet Your Coach Harry</h2>
 
-      <div class="host-card">
-        <div>
-          <div class="host-photo" style="background: none; overflow: hidden; padding: 0;">
-          <img src="harryashton_profile.webp" alt="Harry Ashton" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        </div>
-        <div>
-          <div class="host-tag">Founder</div>
-          <h4>Harry Ashton</h4>
-          <p class="host-title">Senior Frontend Developer, Founder of Learn Frontend Now</p>
-          <div class="host-stats">
-            <div class="host-stat">
-              <div class="host-stat-num">70+</div>
-              <div class="host-stat-label">students placed</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:start;">
+
+        <!-- Left: Harry bio card -->
+        <div style="background:var(--dark-card);border:1px solid var(--border);border-radius:14px;padding:2rem;">
+          <div style="display:flex;gap:1.25rem;align-items:flex-start;margin-bottom:1.25rem;">
+            <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--border-blue);">
+              <img src="harryashton_profile.webp" alt="Harry Ashton" style="width:100%;height:100%;object-fit:cover;">
             </div>
-            <div class="host-stat">
-              <div class="host-stat-num">$5M+</div>
-              <div class="host-stat-label">in student salaries</div>
-            </div>
-            <div class="host-stat">
-              <div class="host-stat-num">6 mo.</div>
-              <div class="host-stat-label">average time to hired</div>
+            <div>
+              <h4 style="font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:0.2rem;">Harry Ashton</h4>
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.6rem;">Lead Senior Frontend Developer · Founder, Frontend Now</p>
+              <div style="display:flex;gap:0.5rem;">
+                <a href="#" style="color:#0a66c2;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="#" style="color:rgba(255,255,255,0.5);"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+                <a href="#" style="color:rgba(255,255,255,0.5);"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              </div>
             </div>
           </div>
-          <p>Harry Ashton is a lead senior frontend developer currently earning $210k/year. He has spent 10+ years building for companies whose clients include Meta, Amazon, and Coca-Cola. He built Frontend Now because he kept watching the same thing happen: developers who were good enough to get hired, but couldn't get past the application stage because nobody showed them what hiring managers actually look for. 70+ developers placed. Every student who completes the program gets a contractual $70k+ job guarantee.</p>
+          <p style="font-size:0.83rem;color:var(--text-muted);line-height:1.75;margin-bottom:1.25rem;">Harry Ashton is a lead senior frontend developer currently earning $210k/year. He has spent 10+ years building for companies whose clients include Meta, Amazon, and Coca-Cola. He built Frontend Now because he kept watching the same thing happen: developers who were good enough to get hired, but couldn't get past the application stage because nobody showed them what hiring managers actually look for.</p>
+          <!-- Company logos -->
+          <div style="display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;margin-bottom:1.5rem;">
+            <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:0.3rem 0.7rem;border-radius:5px;">Meta</span>
+            <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:0.3rem 0.7rem;border-radius:5px;">Microsoft</span>
+            <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:0.3rem 0.7rem;border-radius:5px;">Amazon</span>
+            <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:0.3rem 0.7rem;border-radius:5px;">Coca-Cola</span>
+            <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:0.3rem 0.7rem;border-radius:5px;">NGOs</span>
+            <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:0.3rem 0.7rem;border-radius:5px;">National Govts</span>
+          </div>
+          <a href="#register" class="btn-register" style="font-size:0.85rem;padding:0.75rem 1.5rem;">Book a Call</a>
+        </div>
+
+        <!-- Right: Harry's work experience (LinkedIn resume style) -->
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:0.5rem;">Experience</p>
+
+          <!-- EO Charging -->
+          <div style="background:var(--dark-card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;">
+            <div style="display:flex;gap:0.85rem;align-items:flex-start;">
+              <div style="width:38px;height:38px;border-radius:7px;overflow:hidden;flex-shrink:0;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="eo_charging_logo.webp" alt="EO Charging" style="width:32px;height:32px;object-fit:contain;"></div>
+              <div style="flex:1;">
+                <p style="font-size:0.86rem;font-weight:700;color:#fff;margin-bottom:0.1rem;line-height:1.3;">Lead Frontend Developer</p>
+                <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.1rem;">EO Charging · Full-time</p>
+                <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);margin-bottom:0.6rem;">Aug 2022 – Present · 3 yrs</p>
+                <p style="font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.6;">Lead Frontend Developer on the Depot Squad for the EO Portal. Creating analytical dashboards, customised maps, UI libraries and charts.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thrive LXP -->
+          <div style="background:var(--dark-card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;">
+            <div style="display:flex;gap:0.85rem;align-items:flex-start;">
+              <div style="width:38px;height:38px;border-radius:7px;overflow:hidden;flex-shrink:0;background:#111;display:flex;align-items:center;justify-content:center;"><img src="thrivelearning_logo.webp" alt="Thrive LXP" style="width:32px;height:32px;object-fit:contain;"></div>
+              <div style="flex:1;">
+                <p style="font-size:0.86rem;font-weight:700;color:#fff;margin-bottom:0.1rem;line-height:1.3;">Senior Product Engineer</p>
+                <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.1rem;">Thrive LXP · Full-time</p>
+                <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);margin-bottom:0.6rem;">Nov 2021 – Sep 2022 · 11 mos</p>
+                <p style="font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.6;">Member of the Front End Development team. Primarily worked on building the Frontend for Mapbox-styled PWAs and WordPress projects.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- JH -->
+          <div style="background:var(--dark-card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;">
+            <div style="display:flex;gap:0.85rem;align-items:flex-start;">
+              <div style="width:38px;height:38px;border-radius:7px;overflow:hidden;flex-shrink:0;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="jh_logo.webp" alt="JH" style="width:32px;height:32px;object-fit:contain;"></div>
+              <div style="flex:1;">
+                <p style="font-size:0.86rem;font-weight:700;color:#fff;margin-bottom:0.1rem;line-height:1.3;">Mid Front End Developer</p>
+                <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.1rem;">JH · Full-time</p>
+                <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);margin-bottom:0.6rem;">Jun 2020 – Nov 2021 · 1 yr 5 mos</p>
+                <p style="font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.6;">Built for Angular/Firebase, Shopify, React/Ruby, WordPress and Umbraco.com projects.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Muscle Food -->
+          <div style="background:var(--dark-card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;">
+            <div style="display:flex;gap:0.85rem;align-items:flex-start;">
+              <div style="width:38px;height:38px;border-radius:7px;overflow:hidden;flex-shrink:0;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="muscle_foods_logo.webp" alt="Muscle Food" style="width:32px;height:32px;object-fit:contain;"></div>
+              <div style="flex:1;">
+                <p style="font-size:0.86rem;font-weight:700;color:#fff;margin-bottom:0.1rem;line-height:1.3;">Front End Web Developer</p>
+                <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.1rem;">Muscle Food · Full-time</p>
+                <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);margin-bottom:0.6rem;">2019 – 2020 · 1 yr</p>
+                <p style="font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.6;">Produced coding pages, front end applications in JS and offered technical support to the design team.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- We Are Nuom -->
+          <div style="background:var(--dark-card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;">
+            <div style="display:flex;gap:0.85rem;align-items:flex-start;">
+              <div style="width:38px;height:38px;border-radius:7px;overflow:hidden;flex-shrink:0;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="wearenuom_logo.webp" alt="We Are Nuom" style="width:32px;height:32px;object-fit:contain;"></div>
+              <div style="flex:1;">
+                <p style="font-size:0.86rem;font-weight:700;color:#fff;margin-bottom:0.1rem;line-height:1.3;">Junior Front End Developer</p>
+                <p style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.1rem;">We Are Nuom · Full-time</p>
+                <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);margin-bottom:0.6rem;">2018 – 2019 · 1 yr</p>
+                <p style="font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.6;">Produced coding pages, front end applications in JS and offered technical support to the design team.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1435,6 +1579,61 @@
         </div>
 
         <div class="faq-item">
+          <h5><span>Q:</span> $100k+ per year as a beginner — too good to be true?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> Can I earn whilst I learn?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> What if I've failed before or tried other programmes?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> Will AI take my job?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> What support will I get?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> What if I'm not good at math?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> Worst case scenario?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> How can I get hired without experience?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> How long does it take to start earning?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> Will I have time to do this with my current job and family?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
+          <h5><span>Q:</span> Do companies only hire Full Stack Developers?</h5>
+          <p>[Answer coming soon]</p>
+        </div>
+
+        <div class="faq-item">
           <h5><span>Q:</span> Won't AI replace developers?</h5>
           <p>AI replaces coders who can't think. It amplifies developers who can build. Learn to use it now and you'll have a major edge.</p>
         </div>
@@ -1442,11 +1641,6 @@
         <div class="faq-item">
           <h5><span>Q:</span> I don't have much time.</h5>
           <p>1–2 focused hours per day is all it takes. Students have done this while working two jobs and raising kids.</p>
-        </div>
-
-        <div class="faq-item">
-          <h5><span>Q:</span> I've tried before and failed.</h5>
-          <p>You didn't fail. You tried without a system. That's what this fixes.</p>
         </div>
 
       </div>
@@ -1459,8 +1653,7 @@
       <div class="section-label">The guarantee</div>
       <h2 class="section-title">The $70k+ job guarantee.</h2>
       <div style="background:var(--dark-card);border:1px solid var(--border-blue);border-radius:12px;padding:2rem;margin-top:2rem;">
-        <p style="font-size:1rem;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:0.75rem;">Complete the program and you'll land a $70k+ job offer. If you don't, you get a full refund plus $1,000.</p>
-        <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">It's written into the contract, not buried in fine print.</p>
+        <p style="font-size:1rem;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:0.75rem;">Successful students may be offered a $70k+ job guarantee. It's written into the contract, not buried in fine print.</p>
       </div>
     </div>
   </section>
@@ -1475,7 +1668,7 @@
       <div class="event-badges" style="justify-content: center; margin-bottom: 2rem;">
         <div class="badge">Saturday [DATE]</div>
         <div class="badge">60 Minutes</div>
-        <div class="badge">Free to Attend</div>
+        <div class="badge">Live Masterclass</div>
         <div class="badge">3pm EST / 8pm UK</div>
       </div>
 
@@ -1491,8 +1684,7 @@
   <footer>
     <div class="footer-inner">
       <div class="nav-logo" style="text-decoration: none;">
-        <div class="nav-logo-icon">&lt;/&gt;</div>
-        <span class="nav-logo-text">Learn<span>Frontend</span>Now</span>
+        <img src="fnlogo_white.png" alt="Frontend Now" style="height:38px;width:auto;">
       </div>
       <span class="footer-copy">© 2025 Learn Frontend Now. All rights reserved.</span>
       <div class="footer-links">
@@ -1502,6 +1694,35 @@
       </div>
     </div>
   </footer>
+
+  <!-- ══ VIDEO TESTIMONIAL POPUP ════════════════════════ -->
+  <div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.82);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+    <div style="background:#0f0f1c;border:1px solid rgba(255,255,255,0.08);border-radius:16px;max-width:500px;width:92%;position:relative;box-shadow:0 32px 80px rgba(0,0,0,0.7);overflow:hidden;">
+      <button onclick="document.getElementById('exit-popup').style.display='none'" style="position:absolute;top:0.85rem;right:0.85rem;background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.6);cursor:pointer;font-size:1rem;line-height:1;width:28px;height:28px;border-radius:50%;z-index:1;">✕</button>
+
+      <!-- Video area -->
+      <div style="position:relative;background:#0a0a14;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom, transparent 60%, #0f0f1c 100%);"></div>
+        <!-- Video placeholder — replace src with YouTube embed when ready -->
+        <div id="popup-video-placeholder" style="display:flex;flex-direction:column;align-items:center;gap:1rem;position:relative;z-index:1;cursor:pointer;" onclick="this.innerHTML='<iframe width=\'100%\' height=\'100%\' style=\'position:absolute;inset:0;\' src=\'[YOUTUBE_EMBED_URL]?autoplay=1\' frameborder=\'0\' allow=\'autoplay\'></iframe>'">
+          <div style="width:60px;height:60px;background:#0ea5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(14,165,233,0.15);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" style="margin-left:3px;"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);">Marshall S. — hired in 1 month</p>
+        </div>
+      </div>
+
+      <!-- Copy -->
+      <div style="padding:1.5rem 1.75rem 1.75rem;">
+        <h3 style="font-size:1.2rem;font-weight:800;color:#fff;letter-spacing:-0.025em;line-height:1.25;margin-bottom:0.6rem;">Landed a $100k job and in 2 months, outpaced his team!</h3>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);line-height:1.65;margin-bottom:1.25rem;">I started with Frontend Now back in August of 2023. I was originally a backend engineer and was looking for knowledgeable people to help me shift to a full-stack role. I was offered a position after a couple of months, then a raise of $15,000 after. To my surprise, I was outpacing the other developers and was able to receive a raise of $100,000 after just two months.</p>
+        <a href="#register" onclick="document.getElementById('exit-popup').style.display='none'" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.95rem;background:#0ea5e9;color:#fff;font-size:0.92rem;font-weight:700;border-radius:8px;text-decoration:none;letter-spacing:0.01em;">
+          SECURE MY SEAT
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -1513,6 +1734,19 @@
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+
+    // Exit intent
+    let exitShown = false;
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY < 10 && !exitShown) {
+        exitShown = true;
+        const popup = document.getElementById('exit-popup');
+        popup.style.display = 'flex';
+      }
+    });
+    document.getElementById('exit-popup').addEventListener('click', function(e) {
+      if (e.target === this) this.style.display = 'none';
     });
   </script>
 
