@@ -1117,7 +1117,7 @@
           <h3>How to land a $75k–$100k+ frontend developer role in 2026</h3>
         </div>
         <p>Enter your details and we'll send you the link + a free pre-training resource before we go live.</p>
-        <form onsubmit="return false;">
+        <form id="registration-form">
           <div class="form-row">
             <div class="form-group">
               <label>First Name</label>
@@ -1146,7 +1146,10 @@
               </select>
             </div>
           </div>
-          <button class="btn-submit" type="submit">Save My Spot →</button>
+          <button class="btn-submit" type="submit" id="reg-submit-btn">Save My Spot →</button>
+          <div id="reg-success" style="display:none;margin-top:1rem;padding:0.9rem 1.1rem;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);border-radius:8px;color:#4ade80;font-size:0.88rem;font-weight:600;">
+            You're registered. Check your inbox for the Zoom link.
+          </div>
           <div class="form-trust">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             No spam. Unsubscribe anytime.
@@ -1826,6 +1829,38 @@
     });
     document.getElementById('exit-popup').addEventListener('click', function(e) {
       if (e.target === this) this.style.display = 'none';
+    });
+
+    // ── REGISTRATION FORM ─────────────────────────────────
+    const WEBHOOK_URL = 'REPLACE_WITH_ZAPIER_WEBHOOK_URL';
+
+    document.getElementById('registration-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('reg-submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      const data = {
+        form: 'webinar-registration',
+        first_name:  this.querySelector('[placeholder="Alex"]').value.trim(),
+        last_name:   this.querySelector('[placeholder="Chen"]').value.trim(),
+        email:       this.querySelector('[type="email"]').value.trim(),
+        phone:       this.querySelector('[type="tel"]').value.trim(),
+        situation:   this.querySelector('select').value,
+        submitted_at: new Date().toISOString()
+      };
+
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+          mode: 'no-cors'
+        });
+      } catch(err) { console.warn('Webhook error:', err); }
+
+      btn.style.display = 'none';
+      document.getElementById('reg-success').style.display = 'block';
     });
   </script>
 

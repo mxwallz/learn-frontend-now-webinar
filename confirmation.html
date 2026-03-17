@@ -619,13 +619,34 @@
   </footer>
 
   <script>
-    document.getElementById('portfolio-form').addEventListener('submit', function(e) {
+    const WEBHOOK_URL = 'REPLACE_WITH_ZAPIER_WEBHOOK_URL';
+
+    document.getElementById('portfolio-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const challenge = document.getElementById('p-challenge').value;
       if (!challenge) { document.getElementById('p-challenge').focus(); return; }
-      // TODO: wire to form handler (Formspree, Make webhook, etc.)
+
       const btn = this.querySelector('.btn-submit');
       btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      const data = {
+        form: 'portfolio-survey',
+        challenge:     challenge,
+        portfolio_url: document.getElementById('p-url').value.trim(),
+        roast_opt_in:  document.getElementById('p-roast').checked,
+        submitted_at:  new Date().toISOString()
+      };
+
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+          mode: 'no-cors'
+        });
+      } catch(err) { console.warn('Webhook error:', err); }
+
       btn.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     });
