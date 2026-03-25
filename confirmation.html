@@ -726,6 +726,13 @@
   <script>
     const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/19567257/upvmxg3/';
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const registrant = {
+      first_name: urlParams.get('first_name') || '',
+      last_name:  urlParams.get('last_name')  || '',
+      email:      urlParams.get('email')      || ''
+    };
+
     document.getElementById('portfolio-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const challenge = document.getElementById('p-challenge').value;
@@ -737,6 +744,9 @@
 
       const data = {
         form: 'portfolio-survey',
+        first_name:    registrant.first_name,
+        last_name:     registrant.last_name,
+        email:         registrant.email,
         challenge:     challenge,
         portfolio_url: document.getElementById('p-url').value.trim(),
         roast_opt_in:  document.getElementById('p-roast').checked,

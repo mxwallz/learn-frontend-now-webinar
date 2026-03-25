@@ -1891,7 +1891,12 @@
         });
       } catch(err) { console.warn('Webhook error:', err); }
 
-      window.location.href = 'confirmation.html';
+      const params = new URLSearchParams({
+        first_name: data.first_name,
+        last_name:  data.last_name,
+        email:      data.email
+      });
+      window.location.href = 'confirmation.html?' + params.toString();
     });
   </script>
 
