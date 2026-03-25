@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're Registered — Frontend Now</title>
+  <title>Step 2 — Frontend Now</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
@@ -127,65 +127,6 @@
       line-height: 1.55;
     }
 
-    .details-card {
-      background: var(--dark-card);
-      border: 1px solid var(--border-blue);
-      border-radius: 14px;
-      padding: 1.75rem 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 30px rgba(14,165,233,0.08);
-    }
-
-    .card-label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--blue-bright);
-      font-family: 'JetBrains Mono', monospace;
-      margin-bottom: 1.25rem;
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .detail-item { display: flex; flex-direction: column; gap: 0.2rem; }
-    .detail-item-label { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; font-family: 'JetBrains Mono', monospace; }
-    .detail-item-value { font-size: 0.95rem; font-weight: 600; color: var(--white); }
-
-    .zoom-note {
-      background: rgba(14,165,233,0.06);
-      border: 1px solid var(--border-blue);
-      border-radius: 8px;
-      padding: 0.85rem 1rem;
-      font-size: 0.865rem;
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
-      line-height: 1.55;
-    }
-    .zoom-note strong { color: var(--blue-bright); }
-
-    .btn-calendar {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: transparent;
-      border: 1px solid var(--border-blue);
-      color: var(--blue-bright);
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.15s, border-color 0.15s;
-    }
-    .btn-calendar:hover { background: rgba(14,165,233,0.08); border-color: var(--blue); }
-
     .section-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 
     .section-label {
@@ -232,7 +173,42 @@
     .form-input::placeholder { color: rgba(255,255,255,0.25); }
     .form-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(14,165,233,0.12); }
 
+    select.form-input option { background: #1a1a2e; color: var(--white); }
+
     .form-note { font-size: 0.775rem; color: var(--text-dim); margin-top: 0.4rem; margin-bottom: 1rem; line-height: 1.5; }
+
+    .checkbox-group { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem; cursor: pointer; }
+
+    .checkbox-group input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+      margin-top: 2px;
+      position: relative;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .checkbox-group input[type="checkbox"]:checked { background: var(--blue); border-color: var(--blue); }
+    .checkbox-group input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      width: 6px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+
+    .checkbox-label { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.5; cursor: pointer; }
+    .checkbox-label strong { color: var(--white); }
 
     .btn-submit {
       background: var(--blue);
@@ -249,17 +225,23 @@
     }
     .btn-submit:hover { background: var(--blue-bright); transform: translateY(-1px); }
 
-    .form-success {
-      display: none;
-      background: rgba(74, 222, 128, 0.08);
-      border: 1px solid rgba(74, 222, 128, 0.2);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      color: var(--green);
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-top: 1rem;
-      line-height: 1.5;
+    .details-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border-blue);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 30px rgba(14,165,233,0.08);
+    }
+
+    .card-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 1.25rem;
     }
 
     .discover-list { display: flex; flex-direction: column; gap: 0.875rem; }
@@ -294,39 +276,6 @@
     .stat-cell { background: var(--dark-card); padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.2rem; }
     .stat-value { font-size: 1.6rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
     .stat-label { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; }
-
-    .checkbox-group { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem; cursor: pointer; }
-
-    .checkbox-group input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
-      min-width: 18px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 4px;
-      background: rgba(255,255,255,0.04);
-      cursor: pointer;
-      margin-top: 2px;
-      position: relative;
-      transition: border-color 0.15s, background 0.15s;
-    }
-    .checkbox-group input[type="checkbox"]:checked { background: var(--blue); border-color: var(--blue); }
-    .checkbox-group input[type="checkbox"]:checked::after {
-      content: '';
-      position: absolute;
-      left: 4px;
-      top: 1px;
-      width: 6px;
-      height: 10px;
-      border: 2px solid #fff;
-      border-top: none;
-      border-left: none;
-      transform: rotate(45deg);
-    }
-
-    .checkbox-label { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.5; cursor: pointer; }
-    .checkbox-label strong { color: var(--white); }
 
     .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 
@@ -397,14 +346,9 @@
     @media (max-width: 640px) {
       main { padding: 2.5rem 1.25rem 4rem; }
       nav.site-nav { padding: 1rem 1.25rem; }
-      .details-grid { grid-template-columns: 1fr 1fr; }
       .stats-strip { grid-template-columns: 1fr; }
       .results-grid { grid-template-columns: 1fr; }
       footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
-    }
-
-    @media (max-width: 400px) {
-      .details-grid { grid-template-columns: 1fr; }
     }
 
   </style>
@@ -423,51 +367,49 @@
 
     <div class="confirmed-badge">
       <span class="pulse-dot"></span>
-      Registration confirmed
+      Step 2 of 3
     </div>
 
-    <h1 class="hero-headline">You're in.</h1>
+    <h1 class="hero-headline">Wait — one quick thing.</h1>
     <p class="hero-sub">
-      The Fastest Path Into Cyber Security [Free Training]<br>
-      Saturday at 3pm EST &middot; 8pm UK.
+      Takes 30 seconds. Harry uses these to tailor Saturday's session and pick portfolios for a live review.
     </p>
 
-    <!-- VSL Video -->
-    <div style="margin-bottom:2.5rem;">
-      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;border:1px solid var(--border-blue);box-shadow:0 8px 40px rgba(14,165,233,0.12);">
-        <iframe
-          src="https://drive.google.com/file/d/1JWZm6_WKv-bHUc8AI1_os__9O4xVtLRy/preview"
-          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-          allow="autoplay"
-          allowfullscreen>
-        </iframe>
+    <form id="portfolio-form">
+      <div class="form-group">
+        <label class="form-label" for="p-challenge">What's your biggest challenge right now?</label>
+        <select class="form-input" id="p-challenge" name="challenge">
+          <option value="" disabled selected>Select the one that fits best</option>
+          <option value="no_callbacks">Sending applications but not getting callbacks</option>
+          <option value="dont_know_what_to_build">Don't know what to build for my portfolio</option>
+          <option value="tutorial_hell">Stuck in tutorial loops, not shipping anything</option>
+          <option value="cyber_path">Trying to get into cyber security and don't know where to start</option>
+          <option value="career_change">Changing careers but unsure which path to take</option>
+          <option value="experience_catchup">Employers keep asking for experience I don't have yet</option>
+          <option value="just_starting">Just starting to explore coding / not sure yet</option>
+        </select>
       </div>
-    </div>
-
-    <div class="details-card">
-      <div class="card-label">Your session details</div>
-      <div class="details-grid">
-        <div class="detail-item">
-          <span class="detail-item-label">Date</span>
-          <span class="detail-item-value">Saturday [DATE]</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-item-label">Time</span>
-          <span class="detail-item-value">3pm EST &middot; 8pm UK</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-item-label">Duration</span>
-          <span class="detail-item-value">60 min + Q&amp;A</span>
-        </div>
+      <div class="form-group">
+        <label class="form-label" for="p-investment">Have you invested in your career development before?</label>
+        <select class="form-input" id="p-investment" name="investment">
+          <option value="" disabled selected>Select one</option>
+          <option value="bootcamp">Yes — I've done a bootcamp or paid course</option>
+          <option value="coaching">Yes — I've paid for coaching or a mentorship program</option>
+          <option value="no_free">No — only free resources so far</option>
+          <option value="still_figuring">I'm still figuring out if coding is right for me</option>
+        </select>
       </div>
-      <div class="zoom-note">
-        <strong>Your Zoom link is in your confirmation email.</strong> Check your inbox now and whitelist <strong>harry@learnfrontendnow.com</strong> so reminders reach you before Saturday.
+      <div class="form-group">
+        <label class="form-label" for="p-url">Portfolio or GitHub link <span style="color:var(--text-dim);font-weight:400">(optional)</span></label>
+        <input class="form-input" type="url" id="p-url" name="portfolio_url" placeholder="https://yourportfolio.com or github.com/yourusername">
       </div>
-      <a href="#" class="btn-calendar" id="add-to-calendar">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Add to calendar
-      </a>
-    </div>
+      <label class="checkbox-group">
+        <input type="checkbox" id="p-roast" name="roast_opt_in" value="yes">
+        <span class="checkbox-label"><strong>Yes, roast my portfolio live on Saturday.</strong> Harry will pull it up on screen and walk through exactly what's working and what a hiring manager would think when they open it.</span>
+      </label>
+      <p class="form-note">If you skip this, no problem. Harry sends a second chance via email before Saturday.</p>
+      <button type="submit" class="btn-submit">Continue &rarr;</button>
+    </form>
 
     <hr class="section-divider">
 
@@ -486,7 +428,7 @@
         <span class="discover-number">02</span>
         <p class="discover-text">
           <strong>What actually gets you hired &mdash; including a live portfolio review.</strong>
-          Industry-specific projects prove you understand the domain and can contribute from day one. Generic clones prove you can follow a tutorial. Harry pulls up real portfolios live, walks through what's wrong, what it signals, and what a strong one looks like by comparison. Before and after, in real time. If you submit yours via the form below, it may be one of them.
+          Industry-specific projects prove you understand the domain and can contribute from day one. Generic clones prove you can follow a tutorial. Harry pulls up real portfolios live, walks through what's wrong, what it signals, and what a strong one looks like by comparison. Before and after, in real time. If you submit yours via the form above, it may be one of them.
         </p>
       </div>
       <div class="discover-item">
@@ -591,20 +533,13 @@
 
     <!-- Trustpilot Wall -->
     <div>
-      <!-- Header -->
       <h3 style="font-size:1.35rem;font-weight:800;color:#fff;text-align:center;margin-bottom:0.5rem;">Previous Student Testimonials</h3>
       <div style="display:flex;align-items:center;justify-content:center;gap:0.6rem;margin-bottom:2rem;">
         <span style="font-size:1rem;font-weight:700;color:#fff;">Excellent</span>
-        <!-- 5 stars SVG -->
         <svg height="20" width="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 96"><g fill="none"><g fill="#00b67a"><path d="M0 0h96v96H0zM104 0h96v96h-96zM208 0h96v96h-96zM312 0h96v96h-96zM416 0h96v96h-96z"/></g><path d="M48 64.7L62.6 61l6.1 18.8zm33.6-24.3H55.9L48 16.2l-7.9 24.2H14.4l20.8 15-7.9 24.2 20.8-15 12.8-9.2zM152 64.7l14.6-3.7 6.1 18.8zm33.6-24.3h-25.7L152 16.2l-7.9 24.2h-25.7l20.8 15-7.9 24.2 20.8-15 12.8-9.2zM256 64.7l14.6-3.7 6.1 18.8zm33.6-24.3h-25.7L256 16.2l-7.9 24.2h-25.7l20.8 15-7.9 24.2 20.8-15 12.8-9.2zM360 64.7l14.6-3.7 6.1 18.8zm33.6-24.3h-25.7L360 16.2l-7.9 24.2h-25.7l20.8 15-7.9 24.2 20.8-15 12.8-9.2zM464 64.7l14.6-3.7 6.1 18.8zm33.6-24.3h-25.7L464 16.2l-7.9 24.2h-25.7l20.8 15-7.9 24.2 20.8-15 12.8-9.2z" fill="#fff"/></g></svg>
-        <!-- Trustpilot wordmark -->
         <span style="font-size:0.95rem;font-weight:700;color:#00b67a;letter-spacing:-0.01em;">Trustpilot</span>
       </div>
-
-      <!-- Review cards grid -->
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
-
-        <!-- Review 1: Zachary -->
         <div style="background:#fff;border-radius:14px;padding:2rem;display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(0,0,0,0.18);border:1px solid #e5e7eb;">
           <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:1rem;">
             <div style="width:48px;height:48px;border-radius:50%;background:#d1d5db;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#6b7280;flex-shrink:0;">ZH</div>
@@ -625,8 +560,6 @@
             <span style="font-weight:600;">Date of experience:</span> July 23, 2025
           </div>
         </div>
-
-        <!-- Review 2: Huxley -->
         <div style="background:#fff;border-radius:14px;padding:2rem;display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(0,0,0,0.18);border:1px solid #e5e7eb;">
           <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:1rem;">
             <div style="width:48px;height:48px;border-radius:50%;background:#d1d5db;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#6b7280;flex-shrink:0;">H</div>
@@ -647,8 +580,6 @@
             <span style="font-weight:600;">Date of experience:</span> 22 July 2024
           </div>
         </div>
-
-        <!-- Review 3: Maria -->
         <div style="background:#fff;border-radius:14px;padding:2rem;display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(0,0,0,0.18);border:1px solid #e5e7eb;">
           <div style="display:flex;align-items:center;gap:0.85rem;margin-bottom:1rem;">
             <div style="width:48px;height:48px;border-radius:50%;background:#d1d5db;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#6b7280;flex-shrink:0;">MW</div>
@@ -669,7 +600,6 @@
             <span style="font-weight:600;">Date of experience:</span> June 2, 2025
           </div>
         </div>
-
       </div>
     </div>
 
@@ -688,28 +618,61 @@
   </footer>
 
   <script>
-    document.getElementById('add-to-calendar').addEventListener('click', function(e) {
+    const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/19567257/upvmxg3/';
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const registrant = {
+      first_name: urlParams.get('first_name') || '',
+      last_name:  urlParams.get('last_name')  || '',
+      email:      urlParams.get('email')      || ''
+    };
+
+    document.getElementById('portfolio-form').addEventListener('submit', async function(e) {
       e.preventDefault();
-      // TODO: replace with actual webinar date in format YYYYMMDDTHHMMSSZ
-      // Saturday 3pm EST = 8pm UTC. Example: '20260321T200000Z'
-      const dtStart = 'REPLACE_WITH_DATE';
-      const dtEnd   = 'REPLACE_WITH_DATE';
-      if (dtStart === 'REPLACE_WITH_DATE') {
-        alert('Calendar link coming soon. Check your email for the Zoom confirmation.');
-        return;
-      }
-      const ics = [
-        'BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT',
-        'DTSTART:' + dtStart, 'DTEND:' + dtEnd,
-        'SUMMARY:The Fastest Path Into Cyber Security — Free Training',
-        'DESCRIPTION:Zoom link is in your confirmation email from harry@learnfrontendnow.com',
-        'END:VEVENT', 'END:VCALENDAR'
-      ].join('\n');
-      const blob = new Blob([ics], { type: 'text/calendar' });
-      const url  = URL.createObjectURL(blob);
-      const a    = document.createElement('a');
-      a.href = url; a.download = 'frontend-now-training.ics'; a.click();
-      URL.revokeObjectURL(url);
+      const challenge  = document.getElementById('p-challenge').value;
+      const investment = document.getElementById('p-investment').value;
+      if (!challenge)  { document.getElementById('p-challenge').focus(); return; }
+      if (!investment) { document.getElementById('p-investment').focus(); return; }
+
+      const btn = this.querySelector('.btn-submit');
+      btn.disabled = true;
+      btn.textContent = 'One moment...';
+
+      const data = {
+        form: 'portfolio-survey',
+        first_name:    registrant.first_name,
+        last_name:     registrant.last_name,
+        email:         registrant.email,
+        challenge:     challenge,
+        investment:    investment,
+        portfolio_url: document.getElementById('p-url').value.trim(),
+        roast_opt_in:  document.getElementById('p-roast').checked,
+        submitted_at:  new Date().toISOString()
+      };
+
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+          mode: 'no-cors'
+        });
+      } catch(err) { console.warn('Webhook error:', err); }
+
+      // Routing logic
+      const qualified =
+        challenge  !== 'just_starting' &&
+        investment !== 'no_free' &&
+        investment !== 'still_figuring';
+
+      const nextParams = new URLSearchParams({
+        first_name: registrant.first_name,
+        last_name:  registrant.last_name,
+        email:      registrant.email
+      });
+
+      window.location.href = (qualified ? 'confirmed-qualified.html' : 'confirmation.html')
+        + '?' + nextParams.toString();
     });
   </script>
 
