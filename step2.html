@@ -403,8 +403,8 @@
         <label class="form-label" for="p-url">Portfolio or GitHub link <span style="color:var(--text-dim);font-weight:400">(optional)</span></label>
         <input class="form-input" type="url" id="p-url" name="portfolio_url" placeholder="https://yourportfolio.com or github.com/yourusername">
       </div>
-      <label class="checkbox-group">
-        <input type="checkbox" id="p-roast" name="roast_opt_in" value="yes">
+      <label class="checkbox-group" id="roast-label" style="opacity:0.35;pointer-events:none;transition:opacity 0.2s;">
+        <input type="checkbox" id="p-roast" name="roast_opt_in" value="yes" disabled>
         <span class="checkbox-label"><strong>Yes, roast my portfolio live on Saturday.</strong> Harry will pull it up on screen and walk through exactly what's working and what a hiring manager would think when they open it.</span>
       </label>
       <p class="form-note">If you skip this, no problem. Harry sends a second chance via email before Saturday.</p>
@@ -427,6 +427,18 @@
 
   <script>
     const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/19567257/upvmxg3/';
+
+    const urlInput   = document.getElementById('p-url');
+    const roastLabel = document.getElementById('roast-label');
+    const roastBox   = document.getElementById('p-roast');
+
+    urlInput.addEventListener('input', function() {
+      const hasUrl = this.value.trim().length > 0;
+      roastLabel.style.opacity       = hasUrl ? '1'    : '0.35';
+      roastLabel.style.pointerEvents = hasUrl ? 'auto' : 'none';
+      roastBox.disabled              = !hasUrl;
+      if (!hasUrl) roastBox.checked  = false;
+    });
 
     const urlParams = new URLSearchParams(window.location.search);
     const registrant = {
