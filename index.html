@@ -1339,27 +1339,34 @@
           <!-- Company logos -->
           <div style="display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;margin-bottom:1.5rem;">
             <div style="display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:5px;padding:0.3rem 0.7rem;">
-              <!-- Meta (actual Meta logo) -->
-              <img src="https://cdn.simpleicons.org/meta/0082FB" width="14" height="14" style="object-fit:contain;flex-shrink:0;">
+              <div style="width:16px;height:16px;background:#fff;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><img src="https://logo.clearbit.com/meta.com" width="14" height="14" style="object-fit:contain;"></div>
               <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);">Meta</span>
             </div>
             <div style="display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:5px;padding:0.3rem 0.7rem;">
-              <!-- Microsoft 4-square -->
               <svg width="14" height="14" viewBox="0 0 21 21" style="flex-shrink:0;"><rect x="1" y="1" width="9" height="9" fill="#f25022"/><rect x="11" y="1" width="9" height="9" fill="#7fba00"/><rect x="1" y="11" width="9" height="9" fill="#00a4ef"/><rect x="11" y="11" width="9" height="9" fill="#ffb900"/></svg>
               <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);">Microsoft</span>
             </div>
             <div style="display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:5px;padding:0.3rem 0.7rem;">
-              <!-- Amazon -->
-              <img src="https://cdn.simpleicons.org/amazon/FF9900" width="14" height="14" style="object-fit:contain;flex-shrink:0;">
+              <div style="width:16px;height:16px;background:#fff;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><img src="https://logo.clearbit.com/amazon.com" width="14" height="14" style="object-fit:contain;"></div>
               <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);">Amazon</span>
             </div>
             <div style="display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:5px;padding:0.3rem 0.7rem;">
-              <!-- Coca-Cola -->
-              <img src="https://cdn.simpleicons.org/coca-cola/FF0000" width="14" height="14" style="object-fit:contain;flex-shrink:0;">
+              <div style="width:16px;height:16px;background:#fff;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><img src="https://logo.clearbit.com/coca-cola.com" width="14" height="14" style="object-fit:contain;"></div>
               <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);">Coca-Cola</span>
             </div>
+            <div style="display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:5px;padding:0.3rem 0.7rem;">
+              <div style="width:16px;height:16px;background:#fff;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><img src="https://logo.clearbit.com/jpmorganchase.com" width="14" height="14" style="object-fit:contain;"></div>
+              <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);">JPMorgan</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:5px;padding:0.3rem 0.7rem;">
+              <div style="width:16px;height:16px;background:#fff;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><img src="https://logo.clearbit.com/speechify.com" width="14" height="14" style="object-fit:contain;"></div>
+              <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);">Speechify</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.45rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:5px;padding:0.3rem 0.7rem;">
+              <div style="width:16px;height:16px;background:#fff;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><img src="https://logo.clearbit.com/fanduel.com" width="14" height="14" style="object-fit:contain;"></div>
+              <span style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.6);">FanDuel</span>
+            </div>
           </div>
-          <a href="#register" class="btn-register" style="font-size:0.85rem;padding:0.75rem 1.5rem;">Book a Call</a>
         </div>
 
         <!-- Right: Harry's work experience (LinkedIn resume style) -->
@@ -1856,6 +1863,14 @@
     document.getElementById('exit-popup').addEventListener('click', function(e) {
       if (e.target === this) this.style.display = 'none';
     });
+
+    // 10-second timer trigger (mobile + fallback)
+    setTimeout(function() {
+      if (!exitShown) {
+        exitShown = true;
+        document.getElementById('exit-popup').style.display = 'flex';
+      }
+    }, 10000);
 
     // ── REGISTRATION FORM ─────────────────────────────────
     const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/19567257/upvm8rw/';
