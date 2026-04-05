@@ -1772,18 +1772,29 @@
   <!-- ══ VIDEO TESTIMONIAL POPUP ════════════════════════ -->
   <div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.82);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
     <div style="background:#0f0f1c;border:1px solid rgba(255,255,255,0.08);border-radius:16px;max-width:500px;width:92%;position:relative;box-shadow:0 32px 80px rgba(0,0,0,0.7);overflow:hidden;">
-      <button onclick="document.getElementById('exit-popup').style.display='none'" style="position:absolute;top:0.85rem;right:0.85rem;background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.6);cursor:pointer;font-size:1rem;line-height:1;width:28px;height:28px;border-radius:50%;z-index:1;">✕</button>
+      <button style="position:absolute;top:0.85rem;right:0.85rem;background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.6);cursor:pointer;font-size:1rem;line-height:1;width:28px;height:28px;border-radius:50%;z-index:10;">✕</button>
 
       <!-- Video area -->
-      <div style="position:relative;background:#0a0a14;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;">
-        <div style="position:absolute;inset:0;background:linear-gradient(to bottom, transparent 60%, #0f0f1c 100%);"></div>
-        <!-- Video placeholder — replace src with YouTube embed when ready -->
-        <div id="popup-video-placeholder" style="position:absolute;inset:0;z-index:1;cursor:pointer;display:flex;align-items:center;justify-content:center;" onclick="this.outerHTML='<iframe width=\'100%\' height=\'100%\' style=\'position:absolute;inset:0;border:none;\' src=\'https://drive.google.com/file/d/1uTKv0sx-NVrcvOkmQ2szwwE06_zXZkrh/preview\' allow=\'autoplay\'></iframe>'">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
-            <div style="width:60px;height:60px;background:#0ea5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(14,165,233,0.15);">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="white" style="margin-left:3px;"><path d="M8 5v14l11-7z"/></svg>
+      <div style="position:relative;background:#0a0a14;aspect-ratio:16/10;">
+        <!-- Pre-loaded iframe, src injected when popup opens -->
+        <iframe id="popup-iframe" src="" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <!-- Thumbnail cover — hides on click to reveal playing video -->
+        <div id="popup-cover" style="position:absolute;inset:0;z-index:2;cursor:pointer;overflow:hidden;" onclick="this.style.display='none'">
+          <!-- gradient bg -->
+          <div style="position:absolute;inset:0;background:linear-gradient(160deg,#0d1b2e 0%,#050d18 100%);"></div>
+          <!-- subtle grid texture -->
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.04) 1px,transparent 1px);background-size:32px 32px;"></div>
+          <!-- bottom fade -->
+          <div style="position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,transparent,rgba(5,13,24,0.9));"></div>
+          <!-- content -->
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;padding:1.5rem;text-align:center;">
+            <div style="width:64px;height:64px;background:#0ea5e9;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 16px rgba(14,165,233,0.12);flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="margin-left:4px;"><path d="M8 5v14l11-7z"/></svg>
             </div>
-            <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);">Marshall S. — hired in 1 month</p>
+            <div>
+              <p style="font-size:0.9rem;font-weight:700;color:#fff;line-height:1.4;margin-bottom:0.3rem;">"Landed a $100k job and outpaced his entire team in 2 months"</p>
+              <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);">Marshall S. — Full-Stack Developer</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1792,7 +1803,7 @@
       <div style="padding:1.5rem 1.75rem 1.75rem;">
         <h3 style="font-size:1.2rem;font-weight:800;color:#fff;letter-spacing:-0.025em;line-height:1.25;margin-bottom:0.6rem;">Landed a $100k job and in 2 months, outpaced his team!</h3>
         <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);line-height:1.65;margin-bottom:1.25rem;">I started with Frontend Now back in August of 2023. I was originally a backend engineer and was looking for knowledgeable people to help me shift to a full-stack role. I was offered a position after a couple of months, then a raise of $15,000 after. To my surprise, I was outpacing the other developers and was able to receive a raise of $100,000 after just two months.</p>
-        <a href="#register" onclick="document.getElementById('exit-popup').style.display='none'" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.95rem;background:#0ea5e9;color:#fff;font-size:0.92rem;font-weight:700;border-radius:8px;text-decoration:none;letter-spacing:0.01em;">
+        <a href="#register" onclick="hidePopup()" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.95rem;background:#0ea5e9;color:#fff;font-size:0.92rem;font-weight:700;border-radius:8px;text-decoration:none;letter-spacing:0.01em;">
           SECURE MY SEAT
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -1812,26 +1823,37 @@
       });
     });
 
-    // Exit intent
+    // Popup helpers
     let exitShown = false;
+    function showPopup() {
+      if (exitShown) return;
+      exitShown = true;
+      // Set iframe src with autoplay so video is ready on one click
+      document.getElementById('popup-iframe').src = 'https://drive.google.com/file/d/1uTKv0sx-NVrcvOkmQ2szwwE06_zXZkrh/preview?autoplay=1';
+      document.getElementById('exit-popup').style.display = 'flex';
+    }
+    function hidePopup() {
+      document.getElementById('exit-popup').style.display = 'none';
+      document.getElementById('popup-iframe').src = '';
+      document.getElementById('popup-cover').style.display = 'flex';
+      exitShown = false;
+    }
+
+    // Exit intent (desktop)
     document.addEventListener('mouseleave', function(e) {
-      if (e.clientY < 10 && !exitShown) {
-        exitShown = true;
-        const popup = document.getElementById('exit-popup');
-        popup.style.display = 'flex';
-      }
-    });
-    document.getElementById('exit-popup').addEventListener('click', function(e) {
-      if (e.target === this) this.style.display = 'none';
+      if (e.clientY < 10) showPopup();
     });
 
-    // 10-second timer trigger (mobile + fallback)
-    setTimeout(function() {
-      if (!exitShown) {
-        exitShown = true;
-        document.getElementById('exit-popup').style.display = 'flex';
-      }
-    }, 10000);
+    // 10-second timer (mobile + fallback)
+    setTimeout(showPopup, 10000);
+
+    // Close on backdrop click
+    document.getElementById('exit-popup').addEventListener('click', function(e) {
+      if (e.target === this) hidePopup();
+    });
+
+    // Close button
+    document.querySelector('#exit-popup button').addEventListener('click', hidePopup);
 
     // ── REGISTRATION FORM ─────────────────────────────────
     const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/19567257/upvm8rw/';
